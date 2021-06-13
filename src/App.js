@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import MovieCards from './Components/MovieCard';
+import RenderMovieSuggestions from './Components/RenderMovieSuggestion';
 import SearchBar from './Components/SearchBar';
 import {motion} from 'framer-motion';
 import './App.css';
@@ -22,6 +22,8 @@ const welcomeMessageVariant = {
 function App() {
 
   const [welcomeBg, setWelcomeBg] = useState(true);
+  const [movie, setMovie] = useState("");
+  const [numState, setNumState] = useState(0);
   
   const [hidden, setHidden] = useState(false);
 
@@ -47,6 +49,7 @@ function App() {
     }
   }
 
+
   return (
     <div className="App">
       {welcomeBg && <motion.div 
@@ -60,19 +63,11 @@ function App() {
       </motion.div>}
       <div className={welcomeBg?"welcome-bg":""}></div>
       <motion.div className="head-bar"
-        drag
-        dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0}}
-        dragElastic={.5}
         style={navsate}
       >
-        <SearchBar setWelcomeBg={setWelcomeBg}/>
+        <SearchBar setWelcomeBg={setWelcomeBg} setMovie={setMovie} setNumState={setNumState}/>
       </motion.div>
-        {!welcomeBg && <MovieCards/>}
-        {!welcomeBg && <MovieCards/>}
-        {!welcomeBg && <MovieCards/>}
-        {!welcomeBg && <MovieCards/>}
-        {!welcomeBg && <MovieCards/>}
-      
+      {!welcomeBg && <RenderMovieSuggestions movie={movie} numState={numState}/>}
     </div>
   );
 }
