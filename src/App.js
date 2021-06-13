@@ -24,6 +24,7 @@ function App() {
   const [welcomeBg, setWelcomeBg] = useState(true);
   const [movie, setMovie] = useState("");
   const [numState, setNumState] = useState(0);
+  const [countAPICall, setCountAPICall] = useState(0); 
   
   const [hidden, setHidden] = useState(false);
 
@@ -65,9 +66,14 @@ function App() {
       <motion.div className="head-bar"
         style={navsate}
       >
-        <SearchBar setWelcomeBg={setWelcomeBg} setMovie={setMovie} setNumState={setNumState}/>
+        <SearchBar setWelcomeBg={setWelcomeBg} setMovie={setMovie} setNumState={setNumState} setCountAPICall={setCountAPICall}/>
       </motion.div>
-      {!welcomeBg && <RenderMovieSuggestions movie={movie} numState={numState}/>}
+      {!welcomeBg && 
+        <RenderMovieSuggestions movie={movie} 
+          numState={numState} 
+          countAPICall={countAPICall} 
+          setCountAPICall={setCountAPICall}/>
+      }
     </div>
   );
 }

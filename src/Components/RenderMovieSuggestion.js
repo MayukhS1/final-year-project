@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import MovieCards from './MovieCard';
 
 
-const RenderMovieSuggestions = ({movie, numState}) => {
+const RenderMovieSuggestions = ({movie, numState, countAPICall, setCountAPICall}) => {
 
     const [recomendedMovies, setRecomendedMovies] = useState([]);
     
@@ -21,9 +21,10 @@ const RenderMovieSuggestions = ({movie, numState}) => {
         setRecomendedMovies(res);
     }
 
-    if(movie.length>0 && numState>0){
+    if(countAPICall>0 && movie.length>0 && numState>0){
         console.log("here " + movie,numState);
         fetchRecomendations(movie, numState);
+        setCountAPICall(0);
     }
     
     return(

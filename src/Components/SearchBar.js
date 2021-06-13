@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SearchBar.css';
 
-const SearchBar = ({setWelcomeBg, setMovie, setNumState}) => {
+const SearchBar = ({setWelcomeBg, setMovie, setNumState, setCountAPICall}) => {
     var data = "";
     var query = "";
     var numRecomendation = 0;
@@ -63,6 +63,7 @@ const SearchBar = ({setWelcomeBg, setMovie, setNumState}) => {
                     e.preventDefault();
                     setWelcomeBg(false);
                     setNumState(document.getElementById('numInput').value);
+                    setCountAPICall(1);
                 }}>Go</button>
             </div>
             
