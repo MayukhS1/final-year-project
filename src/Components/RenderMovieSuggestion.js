@@ -5,6 +5,7 @@ import MovieCards from './MovieCard';
 const RenderMovieSuggestions = ({movie, numState, countAPICall, setCountAPICall}) => {
 
     const [recomendedMovies, setRecomendedMovies] = useState([]);
+    const [countMovieApiCall, setCountMovieApiCall] = useState(1);
     
     const fetchRecomendations = async (name, number) => {
 
@@ -33,7 +34,7 @@ const RenderMovieSuggestions = ({movie, numState, countAPICall, setCountAPICall}
               recomendedMovies.map((name,key)=>{
                   return(
                 <div key={key}>
-                    <MovieCards movieName={name}/>
+                    <MovieCards movieName={name} countMovieApiCall={countMovieApiCall} setCountMovieApiCall={setCountMovieApiCall}/>
                 </div>
               );})
           }
