@@ -46,7 +46,7 @@ const MovieCards = ({movieName, countMovieApiCall, setCountMovieApiCall}) => {
             <div className="movie_card" id="bright">
                 <div className="info_section">
                     <div className="movie_header">
-                        <img className="locandina" src={posterUrl} alt="poster"/>
+                        <img className="locandina" src={posterUrl} alt="Poster Not Available"/>
                         <h1>{movieName}</h1>
                         <h4>{fetchedJson["Runtime"]}</h4>
                         <p className="type">{fetchedJson["Genre"]}</p>
