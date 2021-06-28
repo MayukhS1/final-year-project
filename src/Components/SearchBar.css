@@ -86,3 +86,7 @@
   text-align: left;
   font-weight: bold;
 }
+
+.suggestion-box div li:hover{
+  cursor: pointer;
+}

@@ -12,7 +12,7 @@
 	 position: relative;
 	 display: block;
 	 width: 800px;
-	 height: 270px;
+	 height: 300px;
 	 margin: 100px auto;
 	 overflow: hidden;
 	 border-radius: 10px;
@@ -62,11 +62,16 @@
 	 margin-right: 20px;
 	 height: 120px;
 	 box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
+	 color: #cee4fd;
 }
  .movie_card .info_section .movie_desc {
 	 padding: 25px;
 	 height: 50%;
 }
+.movie_desc p {
+	padding-bottom: 20px;
+}
+
  .movie_card .info_section .movie_desc .text {
 	 color: #cfd6e1;
 }
